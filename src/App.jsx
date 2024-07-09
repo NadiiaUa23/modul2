@@ -61,19 +61,43 @@ import {useState} from 'react';
 
 //?Кожне натискання на кнопку повинно змінити 
 //?значення змінної і відобразити нове значення в інтерфейсі. Проте це не працюватиме, ви можете спробувати!
+// const App = () => { 
+//   //замінимо локальну змінну clicks.
+// 	// let clicks = 0;
+//   const [ clicks, setClicks ] = useState(0);
+//   //? 0 є початкове значення змінної стану
+
+//   const handleClick = () => {
+   
+//     // clicks = clicks + 1;
+//     setClicks(clicks + 5);
+//   };
+
+// 	return <button onClick={handleClick}>Current: {clicks}</button>
+// };
+
+//?Додамо до компонента App ще один стан isOpen, 
+//?який буде контролювати відображення абзацу тексту
 const App = () => { 
-  //замінимо локальну змінну clicks.
-	// let clicks = 0;
   const [ clicks, setClicks ] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
-   
-    // clicks = clicks + 1;
     setClicks(clicks + 1);
   };
 
-	return <button onClick={handleClick}>Current: {clicks}</button>
-};
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
+	return(
+    <>
+    <button onClick={handleClick}>Current: {clicks}</button>
+    <button onClick={handleToggle}>{isOpen ? "Hide" : "Show"}</button>
+    {isOpen && <p>Now you can see me!</p>}
+  </>
+  )
+
+};
 
 export default App;
