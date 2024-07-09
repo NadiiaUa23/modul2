@@ -1,4 +1,5 @@
-import {useState} from 'react';
+// import {useState} from 'react';
+import ClickCounter from './components/izolstste/ClickCounter'
 
 //?вар 1
 // const App = () => {
@@ -78,22 +79,35 @@ import {useState} from 'react';
 
 //?Додамо до компонента App ще один стан isOpen, 
 //?який буде контролювати відображення абзацу тексту
-const App = () => { 
-  const [ clicks, setClicks ] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const handleClick = () => {
-    setClicks(clicks + 1);
-  };
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-	return(
+// const App = () => { 
+//   const [ clicks, setClicks ] = useState(0);
+//   const [isOpen, setIsOpen] = useState(false);
+//   const handleClick = () => {
+//     setClicks(clicks + 1);
+//   };
+//   const handleToggle = () => {
+//     setIsOpen(!isOpen);
+//   };
+// 	return(
+//     <>
+//     <button onClick={handleClick}>Current: {clicks}</button>
+//     <button onClick={handleToggle}>{isOpen ? "Hide" : "Show"}</button>
+//     {isOpen && <p>Now you can see me!</p>}
+//   </>
+//   )
+// };
+
+
+const App = () => {
+
+  return (
     <>
-    <button onClick={handleClick}>Current: {clicks}</button>
-    <button onClick={handleToggle}>{isOpen ? "Hide" : "Show"}</button>
-    {isOpen && <p>Now you can see me!</p>}
-  </>
-  )
+			<ClickCounter />
+			<ClickCounter />
+    </>
+  );
 };
+
+
 
 export default App;
