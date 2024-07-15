@@ -1,5 +1,6 @@
 // import {useState} from 'react';
 import ClickCounter from './components/izolstste/ClickCounter'
+import {useState} from 'react';
 
 //?вар 1
 // const App = () => {
@@ -98,16 +99,32 @@ import ClickCounter from './components/izolstste/ClickCounter'
 // };
 
 
+// const App = () => {
+
+//   return (
+//     <>
+// 			<ClickCounter />
+// 			<ClickCounter />
+//     </>
+//   );
+// };
+
 const App = () => {
+	const [clicks, setClicks] = useState(0);
+
+	// Функція, яку будемо передавати в ClickCounter
+	// для виклику під час кліку
+	const handleClick = () => {
+    setClicks(clicks + 1);
+  };
 
   return (
     <>
-			<ClickCounter />
-			<ClickCounter />
+			<ClickCounter value={clicks} onUpdate={handleClick} />
+			<ClickCounter value={clicks} onUpdate={handleClick} />
     </>
   );
 };
-
 
 
 export default App;
