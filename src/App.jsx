@@ -172,12 +172,15 @@ export default function App() {
   }
 
 
-
+//передаем анонімний колбек
   return (
     <div className="{css.container}">
       <h1> state in React </h1>
+             
+    <button onClick={() => {
+      console.log("holla")
 
-    <button onClick={handleClick}>Hello</button>
+    } }>Hello</button>
     </div>
   );
 };
