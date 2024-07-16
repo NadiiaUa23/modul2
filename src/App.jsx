@@ -167,20 +167,21 @@
 
 export default function App() {
 
-  const handleClick = () => {
-    console.log('hello this is click');
+  const handleClick = (value) => {
+    console.log('hello this is click', value);
   }
 
-
-//передаем анонімний колбек
+  //якщо потрібен аргумент () => handleClick{5}
   return (
     <div className="{css.container}">
       <h1> state in React </h1>
              
-    <button onClick={() => {
+    {/* <button onClick={() => {
       console.log("holla")
+    } }>Hello</button> */}
 
-    } }>Hello</button>
+<button onClick={() => handleClick{5} }>Hello</button>
+
     </div>
   );
 };
