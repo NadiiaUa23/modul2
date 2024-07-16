@@ -1,6 +1,7 @@
 // import {useState} from 'react';
-import ClickCounter from './components/izolstste/ClickCounter'
-import {useState} from 'react';
+// import ClickCounter from './components/izolstste/ClickCounter'
+// import {useState} from 'react';
+
 
 //?вар 1
 // const App = () => {
@@ -127,40 +128,56 @@ import {useState} from 'react';
 //   );
 // };
 
-//?Оновлення об'єктів
-const App = () => {
-  const [values, setValues] = useState({
-    x: 0,
-    y: 0,
-	  });
+// //?Оновлення об'єктів
+// const App = () => {
+//   const [values, setValues] = useState({
+//     x: 0,
+//     y: 0,
+// 	  });
 	
-	const updateX = () => {
-			setValues({
-			...values,
-			x: values.x + 1
-		});
-	};
+// 	const updateX = () => {
+// 			setValues({
+// 			...values,
+// 			x: values.x + 1
+// 		});
+// 	};
 
-	const updateY = () => {
-		setValues({
-			...values,
-			y: values.y + 1
-		});
-	};
+// 	const updateY = () => {
+// 		setValues({
+// 			...values,
+// 			y: values.y + 1
+// 		});
+// 	};
+
+//   return (
+//     <div>
+//       <p>
+//         x: {values.x}, y: {values.y}
+//       </p>
+
+//       <button onClick={updateX}>Update x</button>
+//       <button onClick={updateY}>Update y</button>
+//     </div>
+//   );
+// };
+// export default App;
+
+//!lecshen2.1
+
+
+export default function App() {
+
+  const handleClick = () => {
+    console.log('hello this is click');
+  }
+
+
 
   return (
-    <div>
-      <p>
-        x: {values.x}, y: {values.y}
-      </p>
+    <div className="{css.container}">
+      <h1> state in React </h1>
 
-      <button onClick={updateX}>Update x</button>
-      <button onClick={updateY}>Update y</button>
+    <button onClick={handleClick}>Hello</button>
     </div>
   );
 };
-
-
-
-
-export default App;
