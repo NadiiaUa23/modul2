@@ -175,12 +175,7 @@ export default function App() {
   return (
     <div className="{css.container}">
       <h1> state in React </h1>
-             
-    {/* <button onClick={() => {
-      console.log("holla")
-    } }>Hello</button> */}
-
-<button onClick={() => handleClick{5} }>Hello</button>
+<button onClick={() => handleClick(5) }>Hello</button>
 
     </div>
   );
