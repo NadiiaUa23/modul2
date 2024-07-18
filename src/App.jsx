@@ -1,6 +1,6 @@
-// import {useState} from 'react';
+import css from '../src/App.module.css';
 // import ClickCounter from './components/izolstste/ClickCounter'
-// import {useState} from 'react';
+import { useState } from "react";
 
 
 //?вар 1
@@ -165,18 +165,35 @@
 //!lecshen2.1
 
 
+// export default function App() {
+
+//   const handleClick = (value) => {
+//     console.log('hello this is click', value);
+//   }
+
+//   //якщо потрібен аргумент () => handleClick{5}
+//   return (
+//     <div className="{css.container}">
+//       <h1> state in React </h1>
+// <button onClick={() => handleClick(5) }>Hello</button>
+
+//     </div>
+//   );
+// };
+
 export default function App() {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleClick = (value) => {
-    console.log('hello this is click', value);
-  }
-
-  //якщо потрібен аргумент () => handleClick{5}
-  return (
-    <div className="{css.container}">
-      <h1> state in React </h1>
-<button onClick={() => handleClick(5) }>Hello</button>
-
-    </div>
-  );
+const handleToggle = ( ) => {
+  setIsOpen(!isOpen);
 };
+
+return (
+
+<div className={css.container}>
+
+<button onClick={handleToggle} className={css.btn}>{isOpen ? "close" : "show"}</button>
+</div>
+
+)
+}
