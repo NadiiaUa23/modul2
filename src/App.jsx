@@ -1,6 +1,6 @@
 import css from '../src/App.module.css';
 // import ClickCounter from './components/izolstste/ClickCounter'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 //?вар 1
@@ -181,19 +181,35 @@ import { useState } from "react";
 //   );
 // };
 
-export default function App() {
-  const [isOpen, setIsOpen] = useState(false);
+// export default function App() {
+//   const [isOpen, setIsOpen] = useState(false);
 
-const handleToggle = ( ) => {
-  setIsOpen(!isOpen);
+// const handleToggle = ( ) => {
+//   setIsOpen(!isOpen);
+// };
+
+// return (
+
+// <div className={css.container}>
+
+// <button onClick={handleToggle} className={css.btn}>{isOpen ? "close" : "show"}</button>
+// </div>
+
+// )
+// }
+//
+const App = () => {
+  const [clicks, setClicks] = useState(0);
+
+  useEffect(() => {
+    console.log("You can see me only once!");
+  }, []);
+
+  return (
+    <button onClick={() => setClicks(clicks + 1)}>
+      You clicked {clicks} times
+    </button>
+  );
 };
 
-return (
-
-<div className={css.container}>
-
-<button onClick={handleToggle} className={css.btn}>{isOpen ? "close" : "show"}</button>
-</div>
-
-)
-}
+export default App;
