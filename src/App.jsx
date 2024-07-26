@@ -198,18 +198,103 @@ import { useState, useEffect } from "react";
 // )
 // }
 //
+// const App = () => {
+//   const [clicks, setClicks] = useState(0);
+
+//   useEffect(() => {
+//     console.log("You can see me only once!");
+//   }, []);
+
+//   return (
+//     <button onClick={() => setClicks(clicks + 1)}>
+//       You clicked {clicks} times
+//     </button>
+//   );
+// };
+// компонент, який при монтуванні буде запускати інтервал для виведення повідомлення кожні дві секунди.
+// const App = () => {
+
+//   useEffect(() => {
+//     setInterval(() => {
+//       console.log(`Interval - ${Date.now()}`);
+//     }, 2000);
+//   }, []);
+
+//   return <div>App</div>;
+// };
+
+//Створимо компонент Modal, в який перенесемо ефект із запуском інтервалу при монтуванні. В компоненті App додамо стан, який буде контролювати видимість компонента Modal.
+// const Modal = () => {
+//   useEffect(() => {
+//     // setInterval(() => {
+//     //   console.log(`Interval - ${Date.now()}`);
+//     // }, 2000);
+//   }, []);
+
+//   return <div>Modal</div>;
+// };
+
+// const App = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <div>
+//       <button onClick={() => setIsOpen(!isOpen)}>
+//         {isOpen ? "Close" : "Open"}
+//       </button>
+//       {isOpen && <Modal />}
+//     </div>
+//   );
+// };
+
+//Кожен з них виконує свою функцію, запускається відповідно до вказаних залежностей і незалежно від інших.
+
+// const App = () => {
+//   const [clicks, setClicks] = useState(0);
+
+//   useEffect(() => {
+//     console.log("You can see me only once!");
+//   }, []);
+
+//   useEffect(() => {
+//     console.log("Clicks updated: ", clicks);
+//   }, [clicks]);
+
+//   useEffect(() => {
+//     document.title = `You clicked ${clicks} times`;
+//   });
+
+//   return (
+//     <button onClick={() => setClicks(clicks + 1)}>
+//       You clicked {clicks} times
+//     </button>
+//   );
+// };
+
+//Отримаємо ефекти, які запускаються лише при зміні певних значень.
 const App = () => {
-  const [clicks, setClicks] = useState(0);
+  const [first, setFirst] = useState(0);
+  const [second, setSecond] = useState(0);
 
   useEffect(() => {
-    console.log("You can see me only once!");
-  }, []);
+    console.log("First updated: ", first);
+  }, [first]);
+
+  useEffect(() => {
+    console.log("Second updated: ", second);
+  }, [second]);
+
+  useEffect(() => {
+    console.log("First or second updated: ", first + second);
+  }, [first, second]);
 
   return (
-    <button onClick={() => setClicks(clicks + 1)}>
-      You clicked {clicks} times
-    </button>
+    <>
+      <button onClick={() => setFirst(first + 1)}>First: {first}</button>
+      <button onClick={() => setSecond(second + 1)}>Second: {second}</button>
+    </>
   );
 };
+
 
 export default App;
