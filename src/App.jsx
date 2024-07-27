@@ -272,29 +272,48 @@ import { useState, useEffect } from "react";
 // };
 
 //Отримаємо ефекти, які запускаються лише при зміні певних значень.
+// const App = () => {
+//   const [first, setFirst] = useState(0);
+//   const [second, setSecond] = useState(0);
+
+//   useEffect(() => {
+//     console.log("First updated: ", first);
+//   }, [first]);
+
+//   useEffect(() => {
+//     console.log("Second updated: ", second);
+//   }, [second]);
+
+//   useEffect(() => {
+//     console.log("First or second updated: ", first + second);
+//   }, [first, second]);
+
+//   return (
+//     <>
+//       <button onClick={() => setFirst(first + 1)}>First: {first}</button>
+//       <button onClick={() => setSecond(second + 1)}>Second: {second}</button>
+//     </>
+//   );
+// };
+
+// збережемо кількість кліків між перезавантаженнями сторінки. Кожного разу, коли змінюється значення стану clicks, компонент оновлюється, і ми можемо записати ефект
 const App = () => {
-  const [first, setFirst] = useState(0);
-  const [second, setSecond] = useState(0);
+  const [clicks, setClicks] = useState(0);
 
   useEffect(() => {
-    console.log("First updated: ", first);
-  }, [first]);
-
-  useEffect(() => {
-    console.log("Second updated: ", second);
-  }, [second]);
-
-  useEffect(() => {
-    console.log("First or second updated: ", first + second);
-  }, [first, second]);
+    console.log(`Clicks changed - ${clicks}`);
+  }, [clicks]);
 
   return (
-    <>
-      <button onClick={() => setFirst(first + 1)}>First: {first}</button>
-      <button onClick={() => setSecond(second + 1)}>Second: {second}</button>
-    </>
+    <div>
+      <button onClick={() => setClicks(clicks + 1)}>
+        You clicked {clicks} times
+      </button>
+      <button onClick={() => setClicks(0)}>Reset</button>
+    </div>
   );
 };
+
 
 
 export default App;
