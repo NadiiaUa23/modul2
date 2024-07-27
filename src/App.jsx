@@ -304,6 +304,10 @@ const App = () => {
     console.log(`Clicks changed - ${clicks}`);
   }, [clicks]);
 
+  useEffect(() => {
+    window.localStorage.setItem("saved-clicks", clicks);
+  }, [clicks]);
+
   return (
     <div>
       <button onClick={() => setClicks(clicks + 1)}>
