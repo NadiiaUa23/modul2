@@ -1,6 +1,7 @@
 import css from '../src/App.module.css';
 // import ClickCounter from './components/izolstste/ClickCounter'
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import LoginForm from './components/LoginForm/LoginForm';
 
 
 //?вар 1
@@ -297,27 +298,35 @@ import { useState, useEffect } from "react";
 // };
 
 // збережемо кількість кліків між перезавантаженнями сторінки. Кожного разу, коли змінюється значення стану clicks, компонент оновлюється, і ми можемо записати ефект
+// const App = () => {
+//   const [clicks, setClicks] = useState(0);
+
+//   useEffect(() => {
+//     console.log(`Clicks changed - ${clicks}`);
+//   }, [clicks]);
+
+//   useEffect(() => {
+//     window.localStorage.setItem("saved-clicks", clicks);
+//   }, [clicks]);
+
+//   return (
+//     <div>
+//       <button onClick={() => setClicks(clicks + 1)}>
+//         You clicked {clicks} times
+//       </button>
+//       <button onClick={() => setClicks(0)}>Reset</button>
+//     </div>
+//   );
+// };
+
 const App = () => {
-  const [clicks, setClicks] = useState(0);
-
-  useEffect(() => {
-    console.log(`Clicks changed - ${clicks}`);
-  }, [clicks]);
-
-  useEffect(() => {
-    window.localStorage.setItem("saved-clicks", clicks);
-  }, [clicks]);
 
   return (
     <div>
-      <button onClick={() => setClicks(clicks + 1)}>
-        You clicked {clicks} times
-      </button>
-      <button onClick={() => setClicks(0)}>Reset</button>
+    <LoginForm />
     </div>
   );
 };
-
 
 
 export default App;
