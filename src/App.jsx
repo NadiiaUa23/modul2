@@ -320,11 +320,20 @@ import LoginForm from './components/LoginForm/LoginForm';
 // };
 
 const App = () => {
+ // Колбек-функція для обробки сабміту форми
+ const handleLogin = (userData) => {
+  // Виконуємо необхідні операції з даними
+  console.log(userData);
+};
+
 
   return (
     <div>
-    <LoginForm />
-    </div>
+    <h1>Please login to your account!</h1>
+    {/* Передаємо колбек як пропс форми */}
+    <LoginForm onLogin={handleLogin} />
+    {/*Ім'я пропса для компонента форми може бути будь-яким, не обов'язково onLogin, це не вбудований пропс, як у елемента form*/}
+  </div>
   );
 };
 
