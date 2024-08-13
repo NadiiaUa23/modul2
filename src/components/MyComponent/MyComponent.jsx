@@ -6,6 +6,7 @@ const MyComponent = () => {
 
   return (
     <div className={style.container}>
+      <p>Хук useId</p>
       <label htmlFor={id} >Text field label</label>
       <input type="text" id={id}  className={style.input}/>
     </div>
