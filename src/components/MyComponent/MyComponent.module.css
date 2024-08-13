@@ -1,0 +1,14 @@
+.container {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    background-color: #fafafa;
+    font-size: 14px;
+}

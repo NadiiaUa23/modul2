@@ -1,7 +1,9 @@
 import css from '../src/App.module.css';
 // import ClickCounter from './components/izolstste/ClickCounter'
-// import { useState, useEffect } from "react";
+import { useState, useEffect, useId } from "react";
 import LoginForm from './components/LoginForm/LoginForm';
+import MyComponent from './components/MyComponent/MyComponent'
+
 
 
 //?вар 1
@@ -319,6 +321,8 @@ import LoginForm from './components/LoginForm/LoginForm';
 //   );
 // };
 
+
+//Використовуємо форму в компоненті App і передаємо їй пропс onLogin, значенням якого буде колбек-функція, що приймає один параметр - об'єкт даних користувача.
 const App = () => {
  // Колбек-функція для обробки сабміту форми
  const handleLogin = (userData) => {
@@ -333,9 +337,13 @@ const App = () => {
     {/* Передаємо колбек як пропс форми */}
     <LoginForm onLogin={handleLogin} />
     {/*Ім'я пропса для компонента форми може бути будь-яким, не обов'язково onLogin, це не вбудований пропс, як у елемента form*/}
+
+    <MyComponent />
+
   </div>
   );
 };
+
 
 
 export default App;

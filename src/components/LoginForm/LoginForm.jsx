@@ -1,27 +1,35 @@
 import style from './LoginForm.module.css'
 
 
-const LoginForm = () => {
-const handleSubmit = (evt) => {
+//У компоненті форми деструктуризуємо пропс onLogin, це функція, тому викликаємо її при сабміті форми і передаємо їй значення полів.
+
+const LoginForm = ({ onLogin }) => {
+
+  const handleSubmit = (evt) => {
     evt.preventDefault();
 
+    const form = evt.target;
+    const { login, password } = form.elements;
 
-const form = evt.target;
-const {login, password} = form.elements;
+    // Викликаємо пропс onLogin
+    onLogin({
+      login: login.value,
+      password: password.value,
+    });
 
-console.log(login, password);
-console.log(login.value, password.value);
-
-form.reset();
-}
-
-    return (
-      <form onSubmit={handleSubmit} className={style.container}>
-        <input type="text" name="login"  placeholder="Username" className={style.input}/>
-        <input type="password" name="password"   placeholder="Password" className={style.input}/>
-        <button type="submit" className={style.button}>Log in</button>
-      </form>
-    );
+    form.reset();
   };
+
+  return (
+    <div className={style.container}>
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="login" className={style.input} />
+      <input type="password" name="password"  className={style.input}/>
+      <button type="submit" className={style.button}>Login</button>
+    </form>
+    </div>
+  );
+};
+
   
   export default LoginForm;
