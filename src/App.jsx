@@ -2,7 +2,8 @@ import css from '../src/App.module.css';
 // import ClickCounter from './components/izolstste/ClickCounter'
 import { useState, useEffect, useId } from "react";
 import LoginForm from './components/LoginForm/LoginForm';
-import MyComponent from './components/MyComponent/MyComponent'
+import MyComponent from './components/MyComponent/MyComponent';
+import  SearchBar from './components/SearchBar/SearchBar';
 
 
 
