@@ -4,7 +4,7 @@ import { useState, useEffect, useId } from "react";
 import LoginForm from './components/LoginForm/LoginForm';
 import MyComponent from './components/MyComponent/MyComponent';
 import  SearchBar from './components/SearchBar/SearchBar';
-
+import LangSwitcher from './components/LangSwitcher/LangSwitcher' 
 
 
 //?вар 1
@@ -341,6 +341,7 @@ const App = () => {
 
     <MyComponent />
     <SearchBar />
+<LangSwitcher />
 
   </div>
   );
