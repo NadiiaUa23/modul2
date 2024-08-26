@@ -18,9 +18,8 @@ import {useId, useState } from "react";
 //     );
 //   };
   
-const LangSwitcher = () => {
+const LangSwitcher = ({ value, onSelect }) => {
     const selectId = useId();
-    const [lang, setLang] = useState("uk");
   
     return (
       <div className={style.conteiner}>

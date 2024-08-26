@@ -37,6 +37,7 @@ const LoginForm = ({ onLogin }) => {
       <input type="password" name="password" id={passwordId} className={style.input}/>
 
       <button type="submit" className={style.button} >Login</button>
+
     </form>
 
     </div>

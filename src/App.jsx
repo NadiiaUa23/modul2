@@ -330,6 +330,7 @@ const App = () => {
   // Виконуємо необхідні операції з даними
   console.log(userData);
 };
+const [lang, setLang] = useState("uk");
 
 
   return (
@@ -341,7 +342,9 @@ const App = () => {
 
     <MyComponent />
     <SearchBar />
-<LangSwitcher />
+
+    <p>Selected language: {lang}</p>
+    <LangSwitcher value={lang} onSelect={setLang} />
 
   </div>
   );
