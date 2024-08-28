@@ -5,6 +5,8 @@ import LoginForm from './components/LoginForm/LoginForm';
 import MyComponent from './components/MyComponent/MyComponent';
 import  SearchBar from './components/SearchBar/SearchBar';
 import LangSwitcher from './components/LangSwitcher/LangSwitcher' 
+import RadioBoton from './components/RadioBoton/RadioBoton';
+
 
 
 //?вар 1
@@ -350,6 +352,11 @@ const App = () => {
 <div className={css.box}>
     <LangSwitcher />
 </div>
+
+<div className={css.box}>
+  <RadioBoton />
+</div>
+
 
   </div>
   );
