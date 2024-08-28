@@ -330,21 +330,26 @@ const App = () => {
   // Виконуємо необхідні операції з даними
   console.log(userData);
 };
-const [lang, setLang] = useState("uk");
+
 
 
   return (
     <div>
+        <div className={css.box}>
     <h1>Please login to your account!</h1>
     {/* Передаємо колбек як пропс форми */}
     <LoginForm onLogin={handleLogin} />
     {/*Ім'я пропса для компонента форми може бути будь-яким, не обов'язково onLogin, це не вбудований пропс, як у елемента form*/}
-
+</div>
+<div className={css.box}>
     <MyComponent />
+    </div>
+<div className={css.box}>
     <SearchBar />
-
-    <p>Selected language: {lang}</p>
-    <LangSwitcher value={lang} onSelect={setLang} />
+</div>
+<div className={css.box}>
+    <LangSwitcher />
+</div>
 
   </div>
   );

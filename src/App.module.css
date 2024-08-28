@@ -18,3 +18,9 @@
   margin-top: 70px;
 
 }
+
+.box {
+  background: rgb(232, 224, 224);
+  margin-bottom: 35px;
+  border: 2px solid slategrey;
+}
