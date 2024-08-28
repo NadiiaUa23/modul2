@@ -6,6 +6,8 @@ import MyComponent from './components/MyComponent/MyComponent';
 import  SearchBar from './components/SearchBar/SearchBar';
 import LangSwitcher from './components/LangSwitcher/LangSwitcher' 
 import RadioBoton from './components/RadioBoton/RadioBoton';
+import CheckBox from './components/CheckBox/CheckBox';
+
 
 
 
@@ -357,6 +359,9 @@ const App = () => {
   <RadioBoton />
 </div>
 
+<div  className={css.box}>
+  <CheckBox />
+  </div>
 
   </div>
   );

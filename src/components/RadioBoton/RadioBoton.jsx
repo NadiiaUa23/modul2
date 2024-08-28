@@ -5,7 +5,7 @@ const RadioBoton = () => {
     const [coffeeSize, setCoffeeSize] = useState("sm");
     const handleSizeChange = (evt) => {
         setCoffeeSize(evt.target.value);
-      };
+    };
 
     return  (
         <>
