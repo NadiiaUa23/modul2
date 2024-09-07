@@ -1,5 +1,6 @@
 import css from '../src/App.module.css';
 // import ClickCounter from './components/izolstste/ClickCounter'
+import { Formik, Form } from 'formik';
 import { useState, useEffect, useId } from "react";
 import LoginForm from './components/LoginForm/LoginForm';
 import MyComponent from './components/MyComponent/MyComponent';
@@ -7,6 +8,8 @@ import  SearchBar from './components/SearchBar/SearchBar';
 import LangSwitcher from './components/LangSwitcher/LangSwitcher' 
 import RadioBoton from './components/RadioBoton/RadioBoton';
 import CheckBox from './components/CheckBox/CheckBox';
+import FeedbackForm from './components/FeedbackForm/FeedbackForm';
+
 
 
 
@@ -362,6 +365,10 @@ const App = () => {
 <div  className={css.box}>
   <CheckBox />
   </div>
+
+ <div>
+    <FeedbackForm />
+  </div> 
 
   </div>
   );
