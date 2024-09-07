@@ -1,11 +1,13 @@
-.form {
-    padding: 25px;
+.form {}
+
+.label {
+    margin-left: 15px;
 
 }
 
+
 .field {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 35px;
 }
 
 .btn {

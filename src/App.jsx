@@ -366,7 +366,7 @@ const App = () => {
   <CheckBox />
   </div>
 
- <div>
+ <div  className={css.box}>
     <FeedbackForm />
   </div> 
 
