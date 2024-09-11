@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useId } from "react";
 import css from './FeedbackForm.module.css'
 import *as Yup from 'yup';
@@ -36,26 +36,38 @@ const FeedbackForm = () => {
     onSubmit={handleSubmit}
     validationSchema={FeedbackSchema}
     >
-    <Form className={css.Form}>
+      <Form className={css.Form}>
+<div> 
+    <label htmlFor={nameFieldId} className={css.label}>Username: </label>
+    <Field  className={css.field} type="text" name="username"  id={nameFieldId} />
+    <ErrorMessage name="username" component="span" />
+</div>
+    
+<div>  
+    <label htmlFor={emailFieldId} className={css.label} >Email: </label>
+    <Field  className={css.field} type="email" name="email" id={emailFieldId}/>
+    <ErrorMessage name="email" component="span" />
+</div>
 
-     <label htmlFor={nameFieldId} className={css.label}>Username: </label>
-     <Field  className={css.field} type="text" name="username"  id={nameFieldId} />
-     
-     <label htmlFor={emailFieldId} className={css.label} >Email: </label>
-     <Field  className={css.field} type="email" name="email" id={emailFieldId}/>
-     
-     <label htmlFor={msgFieldId} className={css.label} >Message</label>
-     <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.field} />
-	 
-   <label htmlFor={levelFieldId}>Service satisfaction level</label>
-   <Field as="select" name="level" id={levelFieldId}>
+<div> 
+    <label htmlFor={msgFieldId} className={css.label} >Message</label>
+    <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.field} />
+    <ErrorMessage name="message" component="span" />
+</div>
+
+
+<div> 
+    <label htmlFor={levelFieldId}>Service satisfaction level</label>
+    <Field as="select" name="level" id={levelFieldId}>
           <option value="good">Good</option>
           <option value="neutral">Neutral</option>
           <option value="bad">Bad</option>
-        </Field>
+      </Field>
+<ErrorMessage name="level" component="span" />
+</div>
 
-     <button  classname={css.btn} type="submit">Submit</button>
-     </Form>
+    <button  classname={css.btn} type="submit">Submit</button>
+      </Form>
     </Formik>
 
 );
