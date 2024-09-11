@@ -11,8 +11,6 @@ const FeedbackSchema = Yup.object().shape({
   level: Yup.string().oneOf(["good", "neutral", "bad"]).required("Required")
 });
 
-
-
 const initialValues = {
     username: "",
     email: "",
@@ -33,17 +31,24 @@ const FeedbackForm = () => {
 
 
     return (
-    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+    <Formik 
+    initialValues={initialValues} 
+    onSubmit={handleSubmit}
+    validationSchema={FeedbackSchema}
+    >
     <Form className={css.Form}>
-    <label htmlFor={nameFieldId} className={css.label}>Username: </label>
-    <Field  className={css.field} type="text" name="username"  id={nameFieldId} />
-    <label htmlFor={emailFieldId} className={css.label} >Email: </label>
-    <Field  className={css.field} type="email" name="email" id={emailFieldId}/>
-    <label htmlFor={msgFieldId} className={css.label} >Message</label>
-        <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.field} />
+
+     <label htmlFor={nameFieldId} className={css.label}>Username: </label>
+     <Field  className={css.field} type="text" name="username"  id={nameFieldId} />
+     
+     <label htmlFor={emailFieldId} className={css.label} >Email: </label>
+     <Field  className={css.field} type="email" name="email" id={emailFieldId}/>
+     
+     <label htmlFor={msgFieldId} className={css.label} >Message</label>
+     <Field as="textarea" name="message" id={msgFieldId} rows="5" className={css.field} />
 	 
-        <label htmlFor={levelFieldId}>Service satisfaction level</label>
-        <Field as="select" name="level" id={levelFieldId}>
+   <label htmlFor={levelFieldId}>Service satisfaction level</label>
+   <Field as="select" name="level" id={levelFieldId}>
           <option value="good">Good</option>
           <option value="neutral">Neutral</option>
           <option value="bad">Bad</option>
